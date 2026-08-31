@@ -30,6 +30,25 @@ class Message {
 	}
 }
 
+// Query might look like:
+// {
+//   getDie(numSides: 6) {
+//     rollOnce
+//     roll(numRolls: 3)
+//   }
+// }
+
+// Mutation query - returns the id of the created resource
+// const author = 'andy';
+// const content = 'hope is a good thing';
+// const query = /* GraphQL */ `
+//   mutation CreateMessage($input: MessageInput) {
+//     createMessage(input: $input) {
+//       id
+//     }
+//   }
+// `;
+
 // Construct a schema using GraphQL schema language
 const schema = buildSchema(`
     input MessageInput {
