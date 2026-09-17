@@ -1,0 +1,11 @@
+{
+    "python.analysis.extraPaths": [
+        "./venv2/bin",
+        "/venv2/bin",
+        "venv2/bin",
+        "./bin",
+        "bin",
+        "/bin"
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:system"
+}

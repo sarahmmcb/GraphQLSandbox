@@ -85,7 +85,7 @@ const schema = buildSchema(`
 
 const fakeDatabase = {};
 
-// The root provides a resolver function for each property in the Query schema
+// The root provides a resolver function for each property in the Query and Mutation schemas
 const root = {
 	quoteOfTheDay() {
 		return Math.random() < 0.5 ? "Take it easy" : "Salvation lies within";
