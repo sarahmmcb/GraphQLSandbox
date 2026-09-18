@@ -1,0 +1,43 @@
+from __future__ import annotations
+
+from collections.abc import Mapping
+from typing import Any, TypeVar
+
+from attrs import define as _attrs_define
+from typing_extensions import Self
+
+from ..types import UNSET, Unset
+
+T = TypeVar("T", bound="SpotifyRequestQueryParamsGETMeplayercurrentlyPlaying")
+
+
+@_attrs_define
+class SpotifyRequestQueryParamsGETMeplayercurrentlyPlaying:
+    """
+    Attributes:
+        additional_types (str | Unset):
+    """
+
+    additional_types: str | Unset = UNSET
+
+    def to_dict(self) -> dict[str, Any]:
+        additional_types = self.additional_types
+
+        field_dict: dict[str, Any] = {}
+
+        field_dict.update({})
+        if additional_types is not UNSET:
+            field_dict["additional_types"] = additional_types
+
+        return field_dict
+
+    @classmethod
+    def from_dict(cls, src_dict: Mapping[str, Any]) -> Self:
+        d = dict(src_dict)
+        additional_types = d.pop("additional_types", UNSET)
+
+        spotify_request_query_params_get_meplayercurrently_playing = cls(
+            additional_types=additional_types,
+        )
+
+        return spotify_request_query_params_get_meplayercurrently_playing

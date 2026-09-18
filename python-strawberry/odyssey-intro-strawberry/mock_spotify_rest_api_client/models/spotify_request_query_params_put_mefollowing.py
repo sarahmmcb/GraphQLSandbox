@@ -1,0 +1,55 @@
+from __future__ import annotations
+
+from collections.abc import Mapping
+from typing import Any, TypeVar
+
+from attrs import define as _attrs_define
+from typing_extensions import Self
+
+from ..models.spotify_request_query_params_put_mefollowing_type import (
+    SpotifyRequestQueryParamsPUTMefollowingType,
+)
+
+T = TypeVar("T", bound="SpotifyRequestQueryParamsPUTMefollowing")
+
+
+@_attrs_define
+class SpotifyRequestQueryParamsPUTMefollowing:
+    """
+    Attributes:
+        ids (str):
+        type_ (SpotifyRequestQueryParamsPUTMefollowingType):
+    """
+
+    ids: str
+    type_: SpotifyRequestQueryParamsPUTMefollowingType
+
+    def to_dict(self) -> dict[str, Any]:
+        ids = self.ids
+
+        type_ = self.type_.value
+
+        field_dict: dict[str, Any] = {}
+
+        field_dict.update(
+            {
+                "ids": ids,
+                "type": type_,
+            }
+        )
+
+        return field_dict
+
+    @classmethod
+    def from_dict(cls, src_dict: Mapping[str, Any]) -> Self:
+        d = dict(src_dict)
+        ids = d.pop("ids")
+
+        type_ = SpotifyRequestQueryParamsPUTMefollowingType(d.pop("type"))
+
+        spotify_request_query_params_put_mefollowing = cls(
+            ids=ids,
+            type_=type_,
+        )
+
+        return spotify_request_query_params_put_mefollowing
